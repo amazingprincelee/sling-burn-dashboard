@@ -6,6 +6,19 @@
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
 }
+
+
+
+h3 {
+   
+    color: #FFA500;
+    padding: 10px;
+    margin: 20px;
+    border-bottom: #FFA500 solid 2px;
+   
+}
+
+
 .container{
     display:flex;
 }
@@ -105,20 +118,19 @@ main{
 /* Transaction history table */
 
 .data-container {
-    display: flex;
-    justify-content: center;
+   text-align: center;
     
     
 }
 
 .data-table {
 
-    /* border: 0.1px solid orange; */
-    margin: 30px;
+    margin: auto;
     width: 1016px;
     height: 300px;
     overflow: hidden;
     padding: 10px;
+    text-align: center;
     
 }
 
@@ -137,18 +149,20 @@ main{
     color:#fff;
     border: #FFA500 1px solid;
     margin-left: 40px;
+    position: absolute;
     
 }
 
-
-h3 {
-    margin-left: 60px;
-    margin-top: 50px;
-    margin-bottom: 0;
-    color: #FFA500;
-    
-   
+.view-all-btn:hover {
+    background: #fff;
+    color: #000;
+    border: 2px solid orange;
 }
+
+
+
+
+
 
 
 

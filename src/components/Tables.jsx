@@ -3,12 +3,14 @@ import DataTable from 'react-data-table-component';
 
 
 
-const Tables = () => {
+
+const Tables = (props) => {
     
     const columns = [
         {
             name: 'Time',
             selector: row => row.time
+            
         },
 
         {
@@ -123,21 +125,24 @@ const Tables = () => {
 
 
     return (
-        <div className='data-container'>
+        
+         <div>   
+            <div className='data-container'>
+            <h3>{props.tableTitle}</h3>
                 <div className='data-table'>
-
-                <DataTable columns={columns}
-                    data={data}
-                    fixedHeader
                 
-                 />
+                
+                    <DataTable columns={columns}
+                        data={data}
+                        fixedHeader
+                    />
 
+                </div>
 
-               
             </div>
 
-
-            </div>
+        </div>    
+            
     );
 };
 

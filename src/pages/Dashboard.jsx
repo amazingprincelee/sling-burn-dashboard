@@ -1,6 +1,8 @@
 import React from 'react';
 import DisplayBoxes from '../components/DisplayBoxes';
 import Tables from '../components/Tables';
+import { HashLink as Link } from 'react-router-hash-link';
+// import '../pages/BurnHistory'
 
 
 
@@ -11,18 +13,16 @@ const Dashboard = () => {
     return (
         <div className='dashboard-main'>
             <h1>Burn & Supply</h1>
-           <DisplayBoxes />
-
-            {/* trasaction history area 1 */}
-            <h3>Lastest Burns</h3>
-            <Tables />
-
-            <button className='view-all-btn'>View All</button> 
-
-            {/* trasaction history area 2 */}
-            <h3>Burners Ranking</h3>
-            <Tables />
-            <button className='view-all-btn'>View All</button> 
+            <DisplayBoxes />
+            <Tables 
+                tableTitle="Latest History"
+            />
+            <Link to="../BurnHistory" className='view-all-btn'>View All</Link>
+            <Tables 
+                tableTitle="Burn Ranking"
+            />
+            <Link to="../TopBurners" className='view-all-btn'>View All</Link>
+            
         </div>
 
         
