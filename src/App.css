@@ -4,17 +4,32 @@
     margin:0;
     padding:0;
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
+    
+}
+
+html {
+    font-family: "Montserrat", sans-serif;
+  }
+
+body {
+    background-color: #ffffff;
+    background-image: url("https://www.transparenttextures.com/patterns/mirrored-squares.png");
+    
+
+
 }
 
 
 
 h3 {
    
-    color: #FFA500;
+    color: orange;
     padding: 10px;
     margin: 20px;
     border-bottom: #FFA500 solid 2px;
+    font-family: "McLaren", cursive;
+    font-weight: 200;
+    font-size: x-large;
    
 }
 
@@ -29,7 +44,7 @@ main{
 .sidebar{
     background: #1D180B;
     color: #fff;
-    height: 200vh;
+    height: 230vh;
     width: 200px;
     transition: all 0.5s;
 }
@@ -95,6 +110,15 @@ main{
     
 }
 
+.reward-box {
+
+    border: 2px orange solid;
+    width: 400px;
+    height: 200px;
+    border-radius: 20px;
+
+}
+
 .price {
     
     margin-top: 30px;
@@ -119,6 +143,8 @@ main{
 
 .data-container {
    text-align: center;
+   margin-top: 80px;
+   
     
     
 }
@@ -148,7 +174,10 @@ main{
     background: #FFA500;
     color:#fff;
     border: #FFA500 1px solid;
+    /* margin-left: 40px; */
+    margin-top: 20px;
     margin-left: 40px;
+    margin-bottom: 30px;
     position: absolute;
     
 }

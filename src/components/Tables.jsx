@@ -1,5 +1,6 @@
 import React from 'react';
 import DataTable from 'react-data-table-component';
+import { tableCustomStyles } from '../tableStyle';
 
 
 
@@ -135,6 +136,8 @@ const Tables = (props) => {
                     <DataTable columns={columns}
                         data={data}
                         fixedHeader
+                        customStyles={tableCustomStyles}
+                        
                     />
 
                 </div>

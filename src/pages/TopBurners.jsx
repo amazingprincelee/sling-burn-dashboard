@@ -1,5 +1,6 @@
 import React from 'react';
 import DataTable from 'react-data-table-component';
+import { tableCustomStyles } from '../tableStyle';
 
 
 const TopBurners = () => {
@@ -176,12 +177,14 @@ const TopBurners = () => {
     return (
         <div>
             <h1>Top Burners</h1>
+            <h3>Burn Ranking</h3>
             <div className='data-table-history'>
             
                 <DataTable columns={columns}
                     data={data}
                     fixedHeader
                     pagination
+                    customStyles={tableCustomStyles}
                  />      
             </div>
         </div>

@@ -5,7 +5,7 @@ import ReviewsBar from '../components/progressbar/reviewsBar';
 
 const DisplayBoxes = (props) => {
 
-    const [rewiewScore, setRewiewScore] = useState(35.14);
+    const [rewiewScore, setRewiewScore] = useState(35.52);
 
     return (
         <div className='container center'>

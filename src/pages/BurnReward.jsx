@@ -1,10 +1,16 @@
 import React from 'react';
+import logo from '../sling-logo.png';
+import { FaTrophy } from "react-icons/fa";
 
 
 const BurnReward = () => {
     return (
-        <div>
-            <h1>Coming Soon!</h1>
+        <div className='container center'>
+            <div className='reward-box'>
+                <h3><FaTrophy className='icon' /> Burn Reward</h3>
+                <p style={{padding: 10, margin: 10, textAlign: "center"}}>Burn Reward coming soon!   
+                <br/> Please check our social media platforms for updates</p>
+            </div>
         </div>
     );
 };

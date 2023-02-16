@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DataTable from 'react-data-table-component';
+import { tableCustomStyles } from '../tableStyle';
+import LineChart from '../components/LineChart';
+import { SlingData } from "../Data";
 
 
 const BurnHistory = () => {
@@ -173,15 +176,37 @@ const BurnHistory = () => {
         ];
 
 
+
+        const [slingData, setSlingData] = useState({
+            labels: SlingData.map((data) => data.percentage),
+
+            datasets: [
+                {
+                    label: "Burn Gained",
+                    data: SlingData.map((data) => data.burntAmount),
+                    backgroundColor: ["red"]
+                }
+            ]
+        })
+
     return (
         <div>
             <h1>Burn History</h1>
+            <div className='container center'>
+              <div style={{width: 700 }}>
+                <LineChart 
+                    chartData={slingData}
+                />
+              </div>  
+            </div>
+            <h3>Burn Transactions</h3>
             <div className='data-table-history'>
             
                 <DataTable columns={columns}
                     data={data}
                     fixedHeader
                     pagination
+                    customStyles={tableCustomStyles}
                  />      
             </div>
         </div>

@@ -8,6 +8,15 @@ const RewiewsBar = (props) => {
 
     const {score} = props;
 
+// function for calculating the progressbar color
+    const calcColor = (percent, start, end) => {
+        let a = percent/100,
+        b = (end - start) * a,
+        c = b + start;
+
+        return "hsl(" + c + ", 100%, 50%)";
+    };
+
     return (
        <RewiewsProvider valueStart={0} valueEnd={score}>
             {(value) => (
@@ -27,7 +36,7 @@ const RewiewsBar = (props) => {
                 strokeLinecap: "butt",
                 transform: "rotate(-126deg)",
                 transformOrigin: "center center",
-                stroke: "#FF0000"
+                stroke: calcColor(value, 0, 120)
             },
 
             text: {
