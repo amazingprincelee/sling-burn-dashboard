@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import DataTable from 'react-data-table-component';
 import { tableCustomStyles } from '../tableStyle';
 import LineChart from '../components/LineChart';
@@ -7,10 +7,13 @@ import { SlingData } from "../Data";
 
 const BurnHistory = () => {
 
+    const [tableData, setTableData] = useState()
+
     const columns = [
         {
             name: 'Time',
-            selector: row => row.time
+            selector: row => row.timeStamp
+            
         },
 
         {
@@ -19,161 +22,29 @@ const BurnHistory = () => {
         },
 
         {
-            name: 'Method',
-            selector: row => row.method
+            name: 'To',
+            selector: row => row.to
         },
 
         {
             name: '$Sling',
-            selector: row => row.sling
+            selector: row => row.tokenSymbol
         }
     ];
 
-        const data = [
-            {
-                id: 1,
-                time: 'Yesterday',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
+    useEffect(() => {
+        fetch('https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x5a79be6cdce26bc853d72919bf98a0378641b607&address=0x000000000000000000000000000000000000dEaD&page=1&offset=100&startblock=0&endblock=27025780&sort=asc&apikey=2KBH34YNQ4QHV4E5RHF5Y4QBCDWG5RJ5IP')
+           .then((response) => response.json())
+           .then((response) => {
+              setTableData(response.result);
+              
 
-            },
-
-            {
-                id: 2,
-                time: '5 Hours Ago',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
-
-            },
-
-            {
-                id: 3,
-                time: '8 Hours Ago',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
-
-            },
-
-            {
-                id: 4,
-                time: '12 Hours Ago',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
-
-            },
-
-            {
-                id: 5,
-                time: 'Yesterday',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
-
-            },
-
-            {
-                id: 6,
-                time: 'Yesterday',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
-
-            },
-
-            {
-                id: 7,
-                time: 'Yesterday',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
-
-            },
-
-            {
-                id: 8,
-                time: 'Yesterday',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
-
-            },
-
-            {
-                id: 9,
-                time: 'Yesterday',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
-
-            },
-
-            {
-                id: 10,
-                time: 'Yesterday',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
-
-            },
-
-            {
-                id: 1,
-                time: 'Yesterday',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
-
-            },
-
-            {
-                id: 2,
-                time: '5 Hours Ago',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
-
-            },
-
-            {
-                id: 3,
-                time: '8 Hours Ago',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
-
-            },
-
-            {
-                id: 4,
-                time: '12 Hours Ago',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
-
-            },
-
-            {
-                id: 5,
-                time: 'Yesterday',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
-
-            },
-
-            {
-                id: 6,
-                time: 'Yesterday',
-                from: '23hjjjfkgjhjk4545jkkjkjk456',
-                method: 'Sell',
-                sling: '1.00'
-
-            }
-        ];
+            
+           })
+           .catch((err) => {
+              console.log(err.message);
+           });
+     }, []);
 
 
 
@@ -203,7 +74,7 @@ const BurnHistory = () => {
             <div className='data-table-history'>
             
                 <DataTable columns={columns}
-                    data={data}
+                    data={tableData}
                     fixedHeader
                     pagination
                     customStyles={tableCustomStyles}
