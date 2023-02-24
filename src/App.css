@@ -1,3 +1,5 @@
+
+
 /* sidebar style --------------------------------------*/
 
 *{
@@ -27,7 +29,6 @@ h3 {
     padding: 10px;
     margin: 20px;
     border-bottom: #FFA500 solid 2px;
-    font-family: "McLaren", cursive;
     font-weight: 200;
     font-size: x-large;
    
@@ -44,7 +45,7 @@ main{
 .sidebar{
     background: #1D180B;
     color: #fff;
-    height: 230vh;
+    height: 430vh;
     width: 200px;
     transition: all 0.5s;
 }
@@ -190,7 +191,19 @@ main{
 
 
 
+@media screen and (max-width: 1200px) {
+    .container{
+      grid-template-columns: 10% 50% auto;
+      overflow-y: scroll;
+    } 
+  }
+  
+  @media screen and (max-width: 768px) {
+    .AppGlass{
+      grid-template-columns: 1fr;
+    } 
 
+}
 
 
 

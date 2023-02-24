@@ -28,7 +28,7 @@ const BurnHistory = () => {
 
         {
             name: '$Sling',
-            selector: row => row.tokenSymbol
+            selector: row => '1'
         }
     ];
 

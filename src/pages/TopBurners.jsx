@@ -26,7 +26,7 @@ const TopBurners = () => {
 
         {
             name: '$Sling',
-            selector: row => row.tokenSymbol
+            selector: row => "1"
         }
     ];
 

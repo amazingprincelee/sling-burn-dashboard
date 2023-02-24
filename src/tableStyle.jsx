@@ -9,5 +9,7 @@ const tableCustomStyles = {
     },
 
     
+
+    
   }
   export { tableCustomStyles };

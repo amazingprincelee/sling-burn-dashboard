@@ -17,17 +17,17 @@ const DisplayBoxes = (props) => {
 
     //APi Point endpoint consumables 
 
-    const [price, setPrice] = useState("");
-    const [marketCap, setMarketCap] = useState();
-    const [volume, setVolume] = useState();
-    const [priceChange, setPriceChange] = useState();
+    const [price, setPrice] = useState("***");
+    const [marketCap, setMarketCap] = useState("***");
+    const [volume, setVolume] = useState("***");
+    const [priceChange, setPriceChange] = useState("***");
     
     
     useEffect(() => {
         fetch('https://api.dexscreener.com/latest/dex/tokens/0x5a79be6cdce26bc853d72919bf98a0378641b607')
            .then((response) => response.json())
            .then((data) => {
-            //   console.log(data);
+              console.log(data);
               setPrice(data.pairs[0].priceUsd);
               setMarketCap(Math.round(data.pairs[0].priceUsd * 643940000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
               setVolume(data.pairs[0].volume.h24)
@@ -45,10 +45,12 @@ const DisplayBoxes = (props) => {
         fetch('https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x5a79be6cdce26bc853d72919bf98a0378641b607&address=0x000000000000000000000000000000000000dEaD&tag=latest&apikey=2KBH34YNQ4QHV4E5RHF5Y4QBCDWG5RJ5IP')
            .then((response) => response.json())
            .then((BurnData) => {
-             
-             console.log(BurnData);
+            const num = BurnData.result;
 
-            //  setRewiewScore(n);
+            const newNum = num.substring(0, 2)
+            
+            console.log(newNum);
+             setRewiewScore(newNum);
              
              
               

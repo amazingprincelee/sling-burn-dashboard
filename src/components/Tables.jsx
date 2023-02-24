@@ -29,7 +29,7 @@ const Tables = (props) => {
 
         {
             name: '$Sling',
-            selector: row => row.tokenSymbol
+            selector: row => "1"
         }
     ];
 
@@ -62,6 +62,8 @@ const Tables = (props) => {
                         data={tableData}
                         fixedHeader
                         customStyles={tableCustomStyles}
+                        responsive
+                        
                         
                     />
 
