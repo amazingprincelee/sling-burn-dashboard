@@ -13,7 +13,7 @@ const Tables = (props) => {
     const columns = [
         {
             name: 'Time',
-            selector: row => row.timeStamp
+            selector: row => row.timeStamp,
             
         },
 
