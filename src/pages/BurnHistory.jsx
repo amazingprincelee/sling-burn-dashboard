@@ -33,7 +33,7 @@ const BurnHistory = () => {
     ];
 
     useEffect(() => {
-        fetch('https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x5a79be6cdce26bc853d72919bf98a0378641b607&address=0x000000000000000000000000000000000000dEaD&page=1&offset=100&startblock=0&endblock=27025780&sort=asc&apikey=2KBH34YNQ4QHV4E5RHF5Y4QBCDWG5RJ5IP')
+        fetch('https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x5a79be6cdce26bc853d72919bf98a0378641b607&page=1&offset=100&startblock=0&endblock=27025780&sort=asc&apikey=RM1PBIHRH9F5JVJYH7ENZI6SWZMGXU3FTY')
            .then((response) => response.json())
            .then((response) => {
               setTableData(response.result);

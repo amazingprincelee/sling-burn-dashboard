@@ -27,7 +27,6 @@ const DisplayBoxes = (props) => {
         fetch('https://api.dev.dex.guru/v1/chain/1/tokens/0x5a79be6cdce26bc853d72919bf98a0378641b607/market/?api-key=i0Pxxb4APurIDf9E8LcVKK0GYjRVjpa2w4h_5tgZeJk')
            .then((response) => response.json())
            .then((data) => {
-              console.log(data.price_usd.toFixed(8));
               setPrice(data.price_usd.toFixed(8));
               setMarketCap(Math.round(data.price_usd.toFixed(8) * 643940000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
               setVolume(data.volume_24h_usd.toFixed(0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","))
@@ -49,7 +48,7 @@ const DisplayBoxes = (props) => {
 
             const newNum = num.substring(0, 2)
             
-            console.log(newNum);
+            
              setRewiewScore(newNum);
              
              
