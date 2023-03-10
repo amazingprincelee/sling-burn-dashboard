@@ -139,6 +139,13 @@ main{
        
 }
 
+.tables-children {
+    display: flex;
+    margin: 10px auto;
+    width: 69%;
+    height: 100px;
+}
+
 
 /* Transaction history table */
 
