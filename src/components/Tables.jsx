@@ -9,7 +9,7 @@ import convert from 'ethereum-unit-converter'
 const transactionApi = 'https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x5a79be6cdce26bc853d72919bf98a0378641b607&address=0x000000000000000000000000000000000000dEaD&page=1&offset=100&startblock=0&endblock=27025780&sort=asc&apikey=RM1PBIHRH9F5JVJYH7ENZI6SWZMGXU3FTY';
 
 
-const Tables = (props) => {
+const Tables = ({tableClass, tableTitle, pagination}) => {
     const [tableData, setTableData] = useState()
 
     const columns = [
@@ -73,28 +73,20 @@ const Tables = (props) => {
 
 
     return (
-
         <div>
             <div className='data-container'>
-                <h3>{props.tableTitle}</h3>
-                <div className='data-table'>
-
-
+                <h3>{tableTitle}</h3>
+                <div className={tableClass ?? 'data-table'}>
                     <DataTable columns={columns}
                         data={tableData}
                         fixedHeader
                         customStyles={tableCustomStyles}
+                        pagination={pagination}
                         responsive
-
-
                     />
-
                 </div>
-
             </div>
-
         </div>
-
     );
 };
 
