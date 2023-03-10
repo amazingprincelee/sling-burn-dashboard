@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^13.5.0",
     "chart.js": "^4.2.1",
     "eslint-config-react-app": "^7.0.1",
+    "ethereum-unit-converter": "^0.0.17",
     "ethers": "^6.0.4",
     "moment": "^2.29.4",
     "react": "^18.2.0",
