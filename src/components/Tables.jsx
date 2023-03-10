@@ -1,5 +1,5 @@
 import moment from 'moment/moment';
-import React, { useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import DataTable from 'react-data-table-component';
 import { tableCustomStyles } from '../tableStyle';
 import Converter from 'timestamp-conv'
@@ -10,19 +10,13 @@ const transactionApi = 'https://api.etherscan.io/api?module=account&action=token
 
 
 const Tables = (props) => {
-
-    
-
-
     const [tableData, setTableData] = useState()
 
-
-    
     const columns = [
         {
             name: 'Date',
             selector: row => row.timeStamp,
-            
+
         },
 
         {
@@ -41,80 +35,65 @@ const Tables = (props) => {
         }
     ];
 
-       
-
-
-        useEffect(() => {
-            fetch(transactionApi)
-               .then((response) => response.json())
-               .then((response) => {
-                 
+    useEffect(() => {
+        fetch(transactionApi)
+            .then((response) => response.json())
+            .then((response) => {
                 const apiData = response.result;
 
-            // timeStamp conversion 
+                // timeStamp conversion 
                 const newApidata = apiData.map((data) => {
-                const Date = new Converter.date(data.timeStamp);
+                    moment.defaultFormat = 'DD.MM.YYYY HH:mm';
+                    const dateFromTimeStamp = new Converter.date(data.timeStamp);
 
-            //value conversion 
-               
-            
-            const slingValue = convert(data.value, 'wei', 'ether').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    // format dateTime to moment.js understandably format
+                    const formattedDateFromTimeStamp = dateFromTimeStamp.formatHour.replace(',', '')
 
-            
-
-                    
-                    
+                    // value conversion 
+                    const slingValue = convert(data.value, 'wei', 'ether').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
                     const returningData = {
-                        timeStamp: Date.formatDay,
+                        timeStamp: moment(formattedDateFromTimeStamp, moment.defaultFormat).fromNow(),
                         hash: data.hash,
                         to: data.to,
                         sling: slingValue
                     }
-
                     return returningData;
-                
-                
-                
-                
+
                 });
-
-                  setTableData(newApidata);
-                  
-              
-                
-               })
-               .catch((err) => {
-                  console.log(err.message);
-               });
-         }, []);
+                setTableData(newApidata);
+            })
+            .catch((err) => {
+                console.log(err.message);
+            });
+    }, []);
 
 
-         
+
 
     return (
-        
-         <div>   
+
+        <div>
             <div className='data-container'>
-            <h3>{props.tableTitle}</h3>
+                <h3>{props.tableTitle}</h3>
                 <div className='data-table'>
-                 
-                
+
+
                     <DataTable columns={columns}
                         data={tableData}
                         fixedHeader
                         customStyles={tableCustomStyles}
                         responsive
-                        
-                        
+
+
                     />
 
                 </div>
 
             </div>
 
-        </div>    
-            
+        </div>
+
     );
 };
 
