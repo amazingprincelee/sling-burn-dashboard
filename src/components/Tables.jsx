@@ -61,7 +61,8 @@ const Tables = (props) => {
                     return returningData;
 
                 });
-                setTableData(newApidata);
+                // sort data in descending order
+                setTableData(newApidata.reverse());
             })
             .catch((err) => {
                 console.log(err.message);
