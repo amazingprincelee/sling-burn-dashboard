@@ -6,7 +6,9 @@ const TopBurners = () => {
     return (
         <div>
             <h1>Top Burners</h1>
-            <Tables tableTitle={'Burn Ranking'} tableClass={'data-table-history'} pagination={true} />
+            <div className="container center">
+                <Tables tableTitle={'Burn Ranking'} tableClass={'data-table-history'} pagination={true} />
+            </div>
         </div>
     );
 };

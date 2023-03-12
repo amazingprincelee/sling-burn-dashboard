@@ -27,7 +27,7 @@ const BurnHistory = () => {
                     />
                 </div>
             </div>
-            <div>
+            <div className='container center'>
                 <Tables tableTitle={'Burn Transactions'} tableClass={'data-table-history'} pagination={true} />
             </div>
         </div>
