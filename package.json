@@ -10,6 +10,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.3.0-alpha1",
+    "build": "^0.1.4",
     "chart.js": "^4.2.1",
     "eslint-config-react-app": "^7.0.1",
     "ethereum-unit-converter": "^0.0.17",
