@@ -11,6 +11,7 @@ import { useViewport } from "react-viewport-hooks";
 const Dashboard = () => {
   const { tableData } = useTableData();
   const { vw } = useViewport();
+
   return (
     <div>
       <div className="display-boxes">
@@ -22,7 +23,7 @@ const Dashboard = () => {
       <div>
         <div className="p-4">
           <div>
-            {vw < 768 ? (
+            {vw < 1000 ? (
               <>
                 <h1 className="text-center">Latest History</h1>
                 <MobileTable data={tableData?.slice(0, 4)} />
@@ -41,7 +42,7 @@ const Dashboard = () => {
         </div>
         <div className="p-4">
           <div>
-            {vw < 768 ? (
+            {vw < 1000 ? (
               <>
                 <h1 className="text-center">Burn Ranking</h1>
                 <MobileTable data={tableData?.slice(0, 4)} />
