@@ -1,4 +1,3 @@
-import { toNumber } from "ethers";
 import React, { useState, useEffect } from "react";
 import ReviewsBar from "../components/progressbar/reviewsBar";
 import DisplayBox from "./DisplayBox";
@@ -57,15 +56,17 @@ const DisplayBoxes = (props) => {
   }, []);
 
   return (
-    <div className="">
-      <DisplayBox heading={"Price"} value={price} />
-      <DisplayBox heading={"Marketcap"} value={marketCap} />
-      <DisplayBox heading={"24h Volume"} value={volume} />
-      <DisplayBox heading={"Total token Burn"} value={volume}>
-        <div className="display-box-chart">
-          <ReviewsBar score={rewiewScore} />
-        </div>
-      </DisplayBox>
+    <div>
+      <div className="d-flex flex-wrap justify-content-center">
+        <DisplayBox heading={"Price"} value={price} />
+        <DisplayBox heading={"Marketcap"} value={marketCap} />
+        <DisplayBox heading={"24h Volume"} value={volume} />
+        <DisplayBox heading={"Total token Burn"} value={volume}>
+          <div className="display-box-chart">
+            <ReviewsBar score={rewiewScore} />
+          </div>
+        </DisplayBox>
+      </div>
     </div>
   );
 };
