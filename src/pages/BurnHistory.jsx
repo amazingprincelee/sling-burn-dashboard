@@ -2,6 +2,13 @@ import React, { useState } from 'react';
 import LineChart from '../components/LineChart';
 import { SlingData } from "../Data";
 import Tables from '../components/Tables';
+import { HashLink as Link } from "react-router-hash-link";
+
+// import '../pages/BurnHistory'
+import MobileTable from "../components/MobileTable";
+import useTableData from "../utils/useTableData";
+import { useMediaQuery } from "usehooks-ts";
+
 
 
 const BurnHistory = () => {
@@ -17,20 +24,31 @@ const BurnHistory = () => {
         ]
     })
 
+
+    const { tableData } = useTableData();
+  const matches = useMediaQuery("(max-width: 1000px)");
+
     return (
         <div>
-            <h1>Burn History</h1>
-            <div className='container center'>
-                <div style={{ width: 700 }}>
-                    <LineChart
-                        chartData={slingData}
-                    />
-                </div>
-            </div>
-            <div className='container center'>
-                <Tables tableTitle={'Burn Transactions'} tableClass={'data-table-history'} pagination={true} />
-            </div>
+        <div className="p-4">
+          <div>
+            {matches ? (
+              <>
+                <h1 className="text-center">Latest History</h1>
+                <MobileTable data={tableData?.slice(0, 4)} />
+                <Link to="../BurnHistory">
+                  <button className="btn btn-warning">View All</button>
+                </Link>
+              </>
+            ) : (
+              <Tables tableTitle="Latest History" pagination={true} />
+                
+              
+            )}
+          </div>
         </div>
+        
+      </div>
     );
 };
 

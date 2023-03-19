@@ -4,7 +4,7 @@ import Converter from "timestamp-conv";
 import convert from "ethereum-unit-converter";
 
 const transactionApi =
-  "https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x5a79be6cdce26bc853d72919bf98a0378641b607&address=0x000000000000000000000000000000000000dEaD&page=1&offset=100&startblock=0&endblock=27025780&sort=asc&apikey=RM1PBIHRH9F5JVJYH7ENZI6SWZMGXU3FTY";
+  "https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x5a79be6cdce26bc853d72919bf98a0378641b607&address=0x000000000000000000000000000000000000dEaD&page=1&offset=10000&startblock=0&endblock=40000000&sort=desc&apikey=2KBH34YNQ4QHV4E5RHF5Y4QBCDWG5RJ5IP";
 
 const useTableData = () => {
   const [tableData, setTableData] = useState();
@@ -24,8 +24,10 @@ const useTableData = () => {
           const formattedDateFromTimeStamp =
             dateFromTimeStamp.formatHour.replace(",", "");
 
-          // value conversion
-          const slingValue = convert(data.value, "wei", "ether")
+          // conversion from wei to eth value
+          const toEthValue = convert(data.value, "wei", "ether");
+          const slingValue = Number(toEthValue)
+            .toFixed(0)
             .toString()
             .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
@@ -41,7 +43,7 @@ const useTableData = () => {
           return returningData;
         });
         // sort data in descending order
-        setTableData(newApidata.reverse());
+        setTableData(newApidata);
       })
       .catch((err) => {
         console.log(err.message);

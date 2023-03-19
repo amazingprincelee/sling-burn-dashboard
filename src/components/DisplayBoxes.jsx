@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import ReviewsBar from "../components/progressbar/reviewsBar";
-import DisplayBox from "./DisplayBox";
+import {DisplayBox, RewiewScore} from "./DisplayBox";
 
 const DisplayBoxes = (props) => {
   // usestate for the progress and rewiewsBar component
-  const [rewiewScore, setRewiewScore] = useState(35.66);
+  const [rewiewScore, setRewiewScore] = useState(0);
 
   //APi Point endpoint consumables
 
-  const [price, setPrice] = useState("***");
-  const [marketCap, setMarketCap] = useState("***");
-  const [volume, setVolume] = useState("***");
+  const [price, setPrice] = useState(0);
+  const [marketCap, setMarketCap] = useState(0);
+  const [volume, setVolume] = useState(0);
   // const [priceChange, setPriceChange] = useState("***");
 
   useEffect(() => {
@@ -44,11 +44,14 @@ const DisplayBoxes = (props) => {
     )
       .then((response) => response.json())
       .then((BurnData) => {
-        const num = BurnData.result;
+        
+        const result = BurnData.result;
+        const formattedResult = (result / 10000000000000000000000000).toFixed(2);
+        console.log(formattedResult); // Output: "362548956891132981.09"
 
-        const newNum = num.substring(0, 2);
+        // const newNum = num.substring(0, 2);
 
-        setRewiewScore(newNum);
+        setRewiewScore(formattedResult);
       })
       .catch((err) => {
         console.log(err.message);
@@ -61,11 +64,11 @@ const DisplayBoxes = (props) => {
         <DisplayBox heading={"Price"} value={price} />
         <DisplayBox heading={"Marketcap"} value={marketCap} />
         <DisplayBox heading={"24h Volume"} value={volume} />
-        <DisplayBox heading={"Total token Burn"} value={volume}>
+        <RewiewScore heading={"Total Burn"} value={rewiewScore} >
           <div className="display-box-chart">
             <ReviewsBar score={rewiewScore} />
           </div>
-        </DisplayBox>
+        </RewiewScore>
       </div>
     </div>
   );
