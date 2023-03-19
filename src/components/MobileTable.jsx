@@ -3,7 +3,7 @@ import React from "react";
 const MobileTable = ({ data }) => {
   return (
     <>
-      <div className="">
+      <div>
         <table className="table align-middle">
           <thead>
             <tr className="table-warning">
@@ -13,7 +13,7 @@ const MobileTable = ({ data }) => {
           </thead>
           <tbody>
             {data?.map((d) => (
-              <tr className="table-row">
+              <tr className="table-row" key={d}>
                 <td className="fw-semibold">{d.timeStamp}</td>
                 <td>
                   <div className="p-2">
