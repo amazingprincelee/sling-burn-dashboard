@@ -6,11 +6,11 @@ import { HashLink as Link } from "react-router-hash-link";
 // import '../pages/BurnHistory'
 import MobileTable from "../components/MobileTable";
 import useTableData from "../utils/useTableData";
-import { useViewport } from "react-viewport-hooks";
+import { useMediaQuery } from "usehooks-ts";
 
 const Dashboard = () => {
   const { tableData } = useTableData();
-  const { vw } = useViewport();
+  const matches = useMediaQuery("(max-width: 1000px)");
 
   return (
     <div>
@@ -23,7 +23,7 @@ const Dashboard = () => {
       <div>
         <div className="p-4">
           <div>
-            {vw < 1000 ? (
+            {matches ? (
               <>
                 <h1 className="text-center">Latest History</h1>
                 <MobileTable data={tableData?.slice(0, 4)} />
@@ -42,7 +42,7 @@ const Dashboard = () => {
         </div>
         <div className="p-4">
           <div>
-            {vw < 1000 ? (
+            {matches ? (
               <>
                 <h1 className="text-center">Burn Ranking</h1>
                 <MobileTable data={tableData?.slice(0, 4)} />
