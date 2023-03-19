@@ -1,223 +1,235 @@
-
-
 /* sidebar style --------------------------------------*/
 
-*{
-    margin:0;
-    padding:0;
-    text-decoration: none;
-    
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 html {
-    font-family: "Montserrat", sans-serif;
-  }
+  font-family: "Montserrat", sans-serif;
+}
 
 body {
-    background-color: #ffffff;
-    background-image: url("https://www.transparenttextures.com/patterns/mirrored-squares.png");
-    
-
-
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/mirrored-squares.png");
 }
-
-
 
 h3 {
-   
-    color: orange;
-    padding: 10px;
-    margin: 20px;
-    border-bottom: #FFA500 solid 2px;
-    font-weight: 200;
-    font-size: x-large;
-   
+  color: orange;
+  padding: 10px;
+  margin: 20px;
+  border-bottom: #ffa500 solid 2px;
+  font-weight: 200;
+  font-size: x-large;
 }
 
-
-.container{
-    display:flex;
+.container {
+  display: flex;
 }
-main{
-    width: 100%;
-    padding: 20px;
+main {
+  width: 100%;
+  padding: 20px;
 }
-.sidebar{
-    background: #1D180B;
-    color: #fff;
-    height: 430vh;
-    width: 200px;
-    transition: all 0.5s;
+.sidebar {
+  background: #1d180b;
+  color: #fff;
+  width: 200px;
+  transition: all 0.5s;
+  z-index: 1;
 }
-.top_section{
-    display: flex;
-    align-items:center;
-    padding:20px 15px;
+.top_section {
+  display: flex;
+  align-items: center;
+  padding: 20px 15px;
 }
-.logo{
-    height: 30px;
-    width: 100px;
+.logo {
+  height: 30px;
+  width: 100px;
 }
-.bars{
-    display: flex;
-    font-size: 25px;
-    margin-left: 50px;
+.bars {
+  display: flex;
+  font-size: 25px;
+  margin-left: 50px;
 }
-.link{
-    display: flex;
-    color: #fff;
-    padding: 10px 15px;
-    gap: 15px;
-    transition: all 0.5s;
+.link {
+  display: flex;
+  color: #fff;
+  padding: 10px 15px;
+  gap: 15px;
+  transition: all 0.5s;
 }
-.link:hover{
-    border-bottom: 5px solid  #FFA500;
-    color: #ffff;
-    transition: all 0.5s;
+.link:hover {
+  border-bottom: 5px solid #ffa500;
+  color: #ffff;
+  transition: all 0.5s;
 }
-.active{
-    border-bottom: 5px solid #FFA500;
-    color: #FFA500;
+.active {
+  border-bottom: 5px solid #ffa500;
+  color: #ffa500;
 }
-.icon, .link_text{
-    font-size: 18px;
+.icon,
+.link_text {
+  font-size: 18px;
 }
 
 .icon {
-    color: #FFA500;
+  color: #ffa500;
 }
-
-
 
 .token_price {
-    margin: 30px;
+  margin: 30px;
 }
-
-
-
 
 /* Dashboard style --------------------------------------------------------------- start*/
 
-
-
-
 .price-box {
-    width: 200px;
-    height: 150px;
-    border: 2px orange solid;
-    margin: 8px;
-    border-radius: 10px;
-    padding: 20px;
-    
+  width: 200px;
+  height: 150px;
+  border: 2px orange solid;
+  margin: 8px;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .reward-box {
-
-    border: 2px orange solid;
-    width: 400px;
-    height: 200px;
-    border-radius: 20px;
-
+  border: 2px orange solid;
+  width: 400px;
+  height: 200px;
+  border-radius: 20px;
 }
 
 .price {
-    
-    margin-top: 30px;
+  margin-top: 30px;
 }
 
 .center {
-    justify-content: center;
-    
+  justify-content: center;
 }
 
-
 .chart-container {
-    width: 150px;
-    height: 120px;
-    padding: 5px;
-    margin-left: 20px;
-       
+  width: 150px;
+  height: 120px;
+  padding: 5px;
+  margin-left: 20px;
 }
 
 .tables-children {
-    display: flex;
-    margin: 10px auto;
-    width: 69%;
-    height: 100px;
+  display: flex;
+  margin: 10px auto;
+  width: 69%;
+  height: 100px;
 }
-
 
 /* Transaction history table */
 
 .data-container {
-   text-align: center;
-   margin-top: 80px;
-   
-    
-    
+  text-align: center;
+  margin-top: 80px;
 }
 
 .data-table {
-
-    margin: auto;
-    width: 1016px;
-    height: 300px;
-    overflow: hidden;
-    padding: 10px;
-    text-align: center;
-    
+  margin: auto;
+  width: 1016px;
+  height: 300px;
+  overflow: hidden;
+  padding: 10px;
+  text-align: center;
 }
 
-.data-table-history{
-    margin: 30px;
-    width: 1016px;
-    height: 300px;
-    padding: 10px;
+.data-table-history {
+  margin: 30px;
+  width: 1016px;
+  height: 300px;
+  padding: 10px;
 }
-
-
 
 .view-all-btn {
-    padding: 5px;
-    background: #FFA500;
-    color:#fff;
-    border: #FFA500 1px solid;
-    /* margin-left: 40px; */
-    margin-top: 20px;
-    margin-left: 40px;
-    margin-bottom: 30px;
-    position: absolute;
-    
+  padding: 5px;
+  background: #ffa500;
+  color: #fff;
+  border: #ffa500 1px solid;
+  /* margin-left: 40px; */
+  margin-top: 20px;
+  margin-left: 40px;
+  margin-bottom: 30px;
+  position: absolute;
 }
 
 .view-all-btn:hover {
-    background: #fff;
-    color: #000;
-    border: 2px solid orange;
+  background: #fff;
+  color: #000;
+  border: 2px solid orange;
 }
-
-
 
 @media screen and (max-width: 1200px) {
-    .container{
-      grid-template-columns: 10% 50% auto;
-      overflow-y: scroll;
-    } 
+  .container {
+    grid-template-columns: 10% 50% auto;
+    overflow-y: scroll;
   }
-  
-  @media screen and (max-width: 768px) {
-    .AppGlass{
-      grid-template-columns: 1fr;
-    } 
-
 }
 
+@media screen and (max-width: 768px) {
+  .AppGlass {
+    grid-template-columns: 1fr;
+  }
+}
 
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
 
+.routes {
+  position: absolute;
+  margin: 0;
+  z-index: -1;
+}
 
+.display-boxes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 0px;
+}
 
+.display-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  height: 150px;
+  border: 2px orange solid;
+  margin-top: 20px;
+  margin-left: 2.5rem;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
+}
 
+.display-box-text {
+}
 
+.display-box-value {
+}
 
+.display-box-chart {
+  text-align: center;
+  width: 5rem;
+}
 
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
 
+td {
+  white-space: normal !important;
+  word-wrap: break-word;
+}
+table {
+  table-layout: fixed;
+}
