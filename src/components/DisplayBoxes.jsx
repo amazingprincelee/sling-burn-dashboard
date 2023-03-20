@@ -61,14 +61,15 @@ const DisplayBoxes = (props) => {
   return (
     <div>
       <div className="d-flex flex-wrap justify-content-center">
-        <DisplayBox heading={"Price"} value={price} />
-        <DisplayBox heading={"Marketcap"} value={marketCap} />
-        <DisplayBox heading={"24h Volume"} value={volume} />
-        <RewiewScore heading={"Total Burn"} value={rewiewScore} >
+      <RewiewScore heading={"Total Burn"} value={rewiewScore} >
           <div className="display-box-chart">
             <ReviewsBar score={rewiewScore} />
           </div>
         </RewiewScore>
+        <DisplayBox heading={"Price"} value={price} />
+        <DisplayBox heading={"Marketcap"} value={marketCap} />
+        <DisplayBox heading={"24h Volume"} value={volume} />
+        
       </div>
     </div>
   );
