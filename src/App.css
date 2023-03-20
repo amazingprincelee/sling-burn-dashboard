@@ -176,7 +176,7 @@ main {
   width: 100%;
   justify-content: space-around;
   padding: 10px;
-  margin-top: 50px;
+  margin-top: 100px;
   
   
   
@@ -227,15 +227,13 @@ main {
 
 }
 
-.desktop-table {
-  margin-left: 200px;
-}
+
 
 
 
 .footer-custome {
   margin-top: 200px;
-  margin-left: 50px;
+  
 }
 
 
