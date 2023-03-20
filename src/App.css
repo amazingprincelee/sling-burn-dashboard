@@ -157,16 +157,8 @@ main {
   padding: 10px;
 }
 
-.view-all-btn {
-  padding: 5px;
-  background: #ffa500;
-  color: #fff;
-  border: #ffa500 1px solid;
-  /* margin-left: 40px; */
-  margin-top: 20px;
-  margin-left: 40px;
-  margin-bottom: 30px;
-  position: absolute;
+.view-btn {
+  margin-top: 50px;
 }
 
 .view-all-btn:hover {
@@ -184,7 +176,7 @@ main {
   width: 100%;
   justify-content: space-around;
   padding: 10px;
-  margin-top: 60px;
+  margin-top: 100px;
   
   
   
@@ -225,10 +217,27 @@ main {
   }
 
   .chart-container {
-    width: 400px;
+    width: 350px;
     height: 300px;
+    margin-left: 50px;
   }
+
+
+ 
+
 }
+
+.desktop-table {
+  margin-left: 200px;
+}
+
+
+
+.footer-custome {
+  margin-top: 200px;
+  margin-left: 50px;
+}
+
 
 .home-grid {
   display: grid;
@@ -250,6 +259,7 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 15px 0px;
+  margin-left: 50px;
 }
 
 .display-box {
@@ -260,17 +270,17 @@ main {
   height: 150px;
   border: 2px orange solid;
   margin-top: 20px;
-  margin-left: 2.5rem;
+  margin-left: 2.0rem;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 5px 5px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-.display-box-text {
+/* .display-box-text {
 }
 
 .display-box-value {
-}
+} */
 
 .display-box-chart {
   text-align: center;

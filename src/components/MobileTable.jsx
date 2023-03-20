@@ -1,6 +1,6 @@
 import React from "react";
 
-const MobileTable = ({ data }) => {
+const MobileTable = ({ data, }) => {
   return (
     <>
       <div>
@@ -22,7 +22,7 @@ const MobileTable = ({ data }) => {
                   </div>
                   <div className="p-2">
                     <span className="fw-semibold">To: </span>
-                    <span className="fw-light fs-light">{d.to}</span>
+                    <span className="fw-light fs-light">{"Dead Wallet"}</span>
                   </div>
                   <div className="p-2">
                     <span className="fw-semibold">$Sling: </span>

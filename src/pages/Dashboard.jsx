@@ -35,13 +35,15 @@ const Dashboard = () => {
               </>
             ) : (
               <Tables tableTitle="Latest History">
-                <Link to="../BurnHistory" className="view-all-btn">
-                  View All
+                <Link to="../BurnHistory">
+                  <button className="btn btn-warning view-btn">View All</button>
                 </Link>
               </Tables>
             )}
           </div>
-          <Footer />
+          <div>
+      <Footer />
+      </div>
         </div>
       </div>
     </div>

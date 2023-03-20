@@ -49,13 +49,17 @@ const Tables = ({tableClass, tableTitle, pagination, children}) => {
                     // format dateTime to moment.js understandably format
                     const formattedDateFromTimeStamp = dateFromTimeStamp.formatHour.replace(',', '')
 
-                    // value conversion 
-                    const slingValue = convert(data.value, 'wei', 'ether').toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                    // conversion from wei to eth value
+          const toEthValue = convert(data.value, "wei", "ether");
+          const slingValue = Number(toEthValue)
+            .toFixed(0)
+            .toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 
                     const returningData = {
                         timeStamp: moment(formattedDateFromTimeStamp, moment.defaultFormat).fromNow(),
                         hash: data.hash,
-                        to: data.to,
+                        to: "Dead Wallet",
                         sling: slingValue
                     }
                     return returningData;
