@@ -2,6 +2,7 @@ import React from "react";
 import DisplayBoxes from "../components/DisplayBoxes";
 import Tables from "../components/Tables";
 import { HashLink as Link } from "react-router-hash-link";
+import Footer from "../components/Footer";
 
 // import '../pages/BurnHistory'
 import MobileTable from "../components/MobileTable";
@@ -40,6 +41,7 @@ const Dashboard = () => {
               </Tables>
             )}
           </div>
+          <Footer />
         </div>
       </div>
     </div>

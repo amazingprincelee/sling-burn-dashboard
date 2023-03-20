@@ -124,6 +124,16 @@ main {
   height: 100px;
 }
 
+/* Transaction history Line chart */
+
+.chart-container {
+  width: 600px;
+  height: 300px;
+}
+
+
+
+
 /* Transaction history table */
 
 .data-container {
@@ -165,6 +175,39 @@ main {
   border: 2px solid orange;
 }
 
+
+
+/* footer style */
+
+.footer-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 10px;
+  margin-top: 60px;
+  
+  
+  
+  
+
+}
+
+.f-logo {
+  width: 200px;
+  height: 50;
+}
+
+
+.f-text {
+  padding: 20px;
+  width: 300px;
+  
+}
+
+.social a {
+  margin: 5px;
+}
+
 @media screen and (max-width: 1200px) {
   .container {
     grid-template-columns: 10% 50% auto;
@@ -175,6 +218,15 @@ main {
 @media screen and (max-width: 768px) {
   .AppGlass {
     grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    flex-direction: column;
+  }
+
+  .chart-container {
+    width: 400px;
+    height: 300px;
   }
 }
 
