@@ -251,7 +251,8 @@ main {
 }
 
 .logo {
-  width: fit-content;
+  height: 30px;
+  width: 30px;
 }
 
 .display-boxes {
