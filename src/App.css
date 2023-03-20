@@ -227,13 +227,15 @@ main {
 
 }
 
-
+.desktop-table {
+  margin-left: 200px;
+}
 
 
 
 .footer-custome {
   margin-top: 200px;
-  
+  margin-left: 50px;
 }
 
 
@@ -249,7 +251,7 @@ main {
 }
 
 .logo {
-  height: 30px;
+   height: 30px;
   width: 150px;
 }
 
@@ -258,7 +260,7 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 15px 0px;
-  
+  margin-left: 50px;
 }
 
 .display-box {
