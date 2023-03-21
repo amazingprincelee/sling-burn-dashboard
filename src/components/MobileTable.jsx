@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
-const MobileTable = ({ data, }) => {
+const MobileTable = ({ data, pageSize }) => {
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(data.length / pageSize);
+  const startIndex = (currentPage - 1) * pageSize;
+  const endIndex = Math.min(startIndex + pageSize, data.length);
+  const currentData = data.slice(startIndex, endIndex);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
   return (
     <>
       <div>
@@ -12,7 +23,7 @@ const MobileTable = ({ data, }) => {
             </tr>
           </thead>
           <tbody>
-            {data?.map((d) => (
+            {currentData?.map((d) => (
               <tr className="table-row" key={d}>
                 <td className="fw-semibold">{d.timeStamp}</td>
                 <td>
@@ -33,6 +44,25 @@ const MobileTable = ({ data, }) => {
             ))}
           </tbody>
         </table>
+        <nav aria-label="Page navigation">
+          <ul className="pagination justify-content-center">
+            {[...Array(totalPages)].map((_, index) => (
+              <li
+                key={index}
+                className={`page-item ${
+                  currentPage === index + 1 ? "active" : ""
+                }`}
+              >
+                <button
+                  className="page-link"
+                  onClick={() => handlePageChange(index + 1)}
+                >
+                  {index + 1}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </>
   );

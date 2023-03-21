@@ -1,16 +1,18 @@
 import { useState, useEffect } from "react";
-import moment from "moment/moment";
+import moment from "moment";
 import Converter from "timestamp-conv";
 import convert from "ethereum-unit-converter";
 
 const transactionApi =
   "https://api.etherscan.io/api?module=account&action=tokentx&contractaddress=0x5a79be6cdce26bc853d72919bf98a0378641b607&address=0x000000000000000000000000000000000000dEaD&page=1&offset=10000&startblock=0&endblock=40000000&sort=desc&apikey=2KBH34YNQ4QHV4E5RHF5Y4QBCDWG5RJ5IP";
 
-const useTableData = () => {
-  const [tableData, setTableData] = useState();
+const useTableData = (pageNumber, pageSize) => {
+  const [tableData, setTableData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    fetch(transactionApi)
+    setIsLoading(true);
+    fetch(`${transactionApi}&page=${pageNumber}&offset=${pageSize}`)
       .then((response) => response.json())
       .then((response) => {
         const apiData = response.result;
@@ -20,7 +22,7 @@ const useTableData = () => {
           moment.defaultFormat = "DD.MM.YYYY HH:mm";
           const dateFromTimeStamp = new Converter.date(data.timeStamp);
 
-          // format dateTime to moment.js understandably format
+          // format dateTime to moment.js understandable format
           const formattedDateFromTimeStamp =
             dateFromTimeStamp.formatHour.replace(",", "");
 
@@ -44,13 +46,15 @@ const useTableData = () => {
         });
         // sort data in descending order
         setTableData(newApidata);
+        setIsLoading(false);
       })
       .catch((err) => {
         console.log(err.message);
+        setIsLoading(false);
       });
-  }, []);
+  }, [pageNumber, pageSize]);
 
-  return { tableData };
+  return { tableData, isLoading };
 };
 
 export default useTableData;

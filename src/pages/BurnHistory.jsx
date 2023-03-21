@@ -68,7 +68,7 @@ const BurnHistory = () => {
           {matches ? (
             <>
               <h1 className="text-center">Latest History</h1>
-              <MobileTable data={tableData?.slice(0, 4)} pagination={true} />
+              <MobileTable data={tableData?.slice(0, 4)} pageSize={true} />
             </>
           ) : (
             <div className="desktop-table">
