@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Tables from "../components/Tables";
 import Footer from "../components/Footer";
 // import '../pages/BurnHistory'
@@ -57,6 +57,14 @@ const BurnHistory = () => {
   const { tableData } = useTableData();
   const matches = useMediaQuery("(max-width: 1000px)");
 
+
+  // from mobiletable component ----------
+  const [pageSize, setPageSize] = useState(50);
+
+const handlePageSizeChange = (e) => {
+  setPageSize(parseInt(e.target.value, 10));
+};
+
   return (
     <div>
       <div className="chart-container desktop-chart">
@@ -68,7 +76,12 @@ const BurnHistory = () => {
           {matches ? (
             <>
               <h1 className="text-center">Latest History</h1>
-              <MobileTable data={tableData?.slice(0, 4)} pageSize={true} />
+              <MobileTable 
+              data={tableData?.slice(0, pageSize)}
+              pageSize={pageSize}
+              handlePageSizeChange={handlePageSizeChange} 
+              
+              />
             </>
           ) : (
             <div className="desktop-table">
@@ -85,7 +98,7 @@ const BurnHistory = () => {
           )}
         </div>
       </div>
-      <div className="footer-custome">
+      <div >
       <Footer />
       </div>
       

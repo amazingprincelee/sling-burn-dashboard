@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-const MobileTable = ({ data, pageSize }) => {
+const MobileTable = ({ data }) => {
   const [currentPage, setCurrentPage] = useState(1);
-
-  const totalPages = Math.ceil(data.length / pageSize);
-  const startIndex = (currentPage - 1) * pageSize;
-  const endIndex = Math.min(startIndex + pageSize, data.length);
+  const itemsPerPage = 5;
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = Math.min(startIndex + itemsPerPage, data.length);
   const currentData = data.slice(startIndex, endIndex);
 
   const handlePageChange = (page) => {
@@ -54,7 +54,7 @@ const MobileTable = ({ data, pageSize }) => {
                 }`}
               >
                 <button
-                  className="page-link"
+                  className="page-link orange-button"
                   onClick={() => handlePageChange(index + 1)}
                 >
                   {index + 1}
