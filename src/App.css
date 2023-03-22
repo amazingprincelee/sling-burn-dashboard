@@ -223,6 +223,19 @@ main {
   }
 
 
+  .logo-case {
+    margin: auto;
+    width: 280px;
+    height: 200px;
+    
+  }
+
+  .burn-logo {
+    width: 250px;
+    height: 50px;
+  }
+
+
  
 
 }
@@ -254,6 +267,9 @@ main {
    height: 30px;
   width: 150px;
 }
+
+
+
 
 .display-boxes {
   display: flex;
