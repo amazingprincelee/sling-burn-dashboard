@@ -59,7 +59,7 @@ const BurnHistory = () => {
 
 
   // from mobiletable component ----------
-  const [pageSize, setPageSize] = useState(50);
+  const [pageSize, setPageSize] = useState(40);
 
 const handlePageSizeChange = (e) => {
   setPageSize(parseInt(e.target.value, 10));
