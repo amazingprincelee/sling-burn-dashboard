@@ -178,6 +178,14 @@ main {
 
 /* footer style */
 
+.footer {
+  
+  margin: auto;
+  width: 100vw;
+  height: 300px;
+  
+}
+
 .footer-content {
   display: flex;
   width: 100%;
