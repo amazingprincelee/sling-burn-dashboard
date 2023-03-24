@@ -21,7 +21,7 @@ const DisplayBoxes = (props) => {
       .then((data) => {
         setPrice(data.price_usd.toFixed(8));
         setMarketCap(
-          Math.round(data.price_usd.toFixed(8) * 643940000)
+          Math.round(data.price_usd.toFixed(8) * 636000000)
             .toString()
             .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         );

@@ -12,6 +12,10 @@ const MobileTable = ({ data }) => {
     setCurrentPage(page);
   };
 
+  const handleLastPage = () => {
+    setCurrentPage(totalPages);
+  };
+
   return (
     <>
       <div>
@@ -61,6 +65,14 @@ const MobileTable = ({ data }) => {
                 </button>
               </li>
             ))}
+            <li className="page-item">
+              <button
+                className="page-link orange-button"
+                onClick={handleLastPage}
+              >
+               {'>|'}
+              </button>
+            </li>
           </ul>
         </nav>
       </div>

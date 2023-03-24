@@ -21,11 +21,12 @@ const BurnHistory = () => {
   return (
     <div>
 
-      <div className="logo-case">
-        <img className="burn-logo" src={logo} alt="logo" />
-      </div>
+      
 
       <div className="p-4">
+      <div className="logo-case">
+        <img className="logo" src={logo} alt="logo" />
+      </div>
         <div>
           {matches ? (
             <>
