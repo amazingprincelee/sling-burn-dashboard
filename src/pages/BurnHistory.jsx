@@ -12,7 +12,7 @@ const BurnHistory = () => {
   const matches = useMediaQuery("(max-width: 1000px)");
 
   // from mobiletable component ----------
-  const [pageSize, setPageSize] = useState(80);
+  const [pageSize, setPageSize] = useState(1000);
 
   const handlePageSizeChange = (e) => {
     setPageSize(parseInt(e.target.value, 10));

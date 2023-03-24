@@ -1,20 +1,18 @@
 import React, { useState } from "react";
+import ReactPaginate from "react-paginate";
 
 const MobileTable = ({ data }) => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 10;
   const totalPages = Math.ceil(data.length / itemsPerPage);
-  const startIndex = (currentPage - 1) * itemsPerPage;
+
+  const handlePageClick = (selectedPage) => {
+    setCurrentPage(selectedPage.selected);
+  };
+
+  const startIndex = currentPage * itemsPerPage;
   const endIndex = Math.min(startIndex + itemsPerPage, data.length);
   const currentData = data.slice(startIndex, endIndex);
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
-  };
-
-  const handleLastPage = () => {
-    setCurrentPage(totalPages);
-  };
 
   return (
     <>
@@ -27,7 +25,7 @@ const MobileTable = ({ data }) => {
             </tr>
           </thead>
           <tbody>
-            {currentData?.map((d) => (
+            {currentData.map((d) => (
               <tr className="table-row" key={d}>
                 <td className="fw-semibold">{d.timeStamp}</td>
                 <td>
@@ -48,33 +46,21 @@ const MobileTable = ({ data }) => {
             ))}
           </tbody>
         </table>
-        <nav aria-label="Page navigation">
-          <ul className="pagination justify-content-center">
-            {[...Array(totalPages)].map((_, index) => (
-              <li
-                key={index}
-                className={`page-item ${
-                  currentPage === index + 1 ? "active" : ""
-                }`}
-              >
-                <button
-                  className="page-link orange-button"
-                  onClick={() => handlePageChange(index + 1)}
-                >
-                  {index + 1}
-                </button>
-              </li>
-            ))}
-            <li className="page-item">
-              <button
-                className="page-link orange-button"
-                onClick={handleLastPage}
-              >
-               {'>|'}
-              </button>
-            </li>
-          </ul>
-        </nav>
+        <ReactPaginate
+          pageCount={totalPages}
+          marginPagesDisplayed={2}
+          pageRangeDisplayed={5}
+          onPageChange={handlePageClick}
+          containerClassName={"pagination justify-content-center"}
+          activeClassName={"active"}
+          pageLinkClassName={"page-link orange-button"}
+          previousLinkClassName={"page-link orange-button"}
+          nextLinkClassName={"page-link orange-button"}
+          breakClassName={"page-item"}
+          breakLinkClassName={"page-link orange-button"}
+          previousLabel={"«"}
+          nextLabel={"»"}
+        />
       </div>
     </>
   );
