@@ -10,7 +10,7 @@ const Footer = () => {
           <img className="f-logo" src={logo} alt="logo" />
           <p className="f-text">
             The Sling Burn Project. <br />1 token sells trigger the burn
-            mechanism hourly.{" "}
+            mechanism.{" "}
           </p>
         </div>
 

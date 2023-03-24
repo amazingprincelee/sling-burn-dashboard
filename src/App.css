@@ -124,6 +124,8 @@ main {
   height: 100px;
 }
 
+
+
 /* Transaction history Line chart */
 
 .chart-container {
@@ -239,7 +241,7 @@ main {
     margin-left: 50px;
   }
 
- 
+
 
 }
 
@@ -248,11 +250,6 @@ main {
 }
 
 
-
-/* .footer-custome {
-  margin-top: 200px;
-  margin-left: 50px;
-} */
 
 
 .home-grid {
@@ -279,7 +276,7 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 15px 0px;
-  margin-left: 25px;
+  margin-left: 35px;
 }
 
 .display-box {
