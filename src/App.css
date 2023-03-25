@@ -133,6 +133,10 @@ main {
   height: 300px;
 }
 
+.loading {
+  color: #000;
+}
+
 /* ----------------- */
 
 .logo-case {

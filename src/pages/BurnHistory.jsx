@@ -27,7 +27,7 @@ const BurnHistory = () => {
   return (
     <div>
       {loading ? (
-        <div>Loading...</div>
+        <div className="loading">Loading...</div>
       ) : (
         <>
           <div className="p-4">
