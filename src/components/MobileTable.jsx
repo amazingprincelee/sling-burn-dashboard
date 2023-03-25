@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
 
-const MobileTable = ({ data }) => {
+const MobileTable = ({ data, showPagination }) => {
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 10;
   const totalPages = Math.ceil(data.length / itemsPerPage);
@@ -46,21 +46,23 @@ const MobileTable = ({ data }) => {
             ))}
           </tbody>
         </table>
-        <ReactPaginate
-          pageCount={totalPages}
-          marginPagesDisplayed={2}
-          pageRangeDisplayed={5}
-          onPageChange={handlePageClick}
-          containerClassName={"pagination justify-content-center"}
-          activeClassName={"active"}
-          pageLinkClassName={"page-link orange-button"}
-          previousLinkClassName={"page-link orange-button"}
-          nextLinkClassName={"page-link orange-button"}
-          breakClassName={"page-item"}
-          breakLinkClassName={"page-link orange-button"}
-          previousLabel={"«"}
-          nextLabel={"»"}
-        />
+        {showPagination && (
+          <ReactPaginate
+            pageCount={totalPages}
+            marginPagesDisplayed={2}
+            pageRangeDisplayed={3}
+            onPageChange={handlePageClick}
+            containerClassName={"pagination justify-content-center"}
+            activeClassName={"active"}
+            pageLinkClassName={"page-link orange-button"}
+            previousLinkClassName={"page-link orange-button"}
+            nextLinkClassName={"page-link orange-button"}
+            breakClassName={"page-item"}
+            breakLinkClassName={"page-link orange-button"}
+            previousLabel={"«"}
+            nextLabel={"»"}
+          />
+        )}
       </div>
     </>
   );

@@ -28,7 +28,7 @@ const Dashboard = () => {
             {matches ? (
               <>
                 <h1 className="text-center">Latest History</h1>
-                <MobileTable data={tableData?.slice(0, 4)} />
+                <MobileTable data={tableData?.slice(0, 4)} showPagination={false} />
                 <Link to="../BurnHistory">
                   <button className="btn btn-warning">View All</button>
                 </Link>
