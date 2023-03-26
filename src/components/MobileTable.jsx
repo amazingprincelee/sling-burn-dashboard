@@ -46,7 +46,7 @@ const MobileTable = ({ data, showPagination }) => {
             ))}
           </tbody>
         </table>
-        {showPagination && (
+        {totalPages > 1 && showPagination && (
           <ReactPaginate
             pageCount={totalPages}
             marginPagesDisplayed={2}
