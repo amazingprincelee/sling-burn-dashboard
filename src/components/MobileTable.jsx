@@ -50,7 +50,7 @@ const MobileTable = ({ data, showPagination }) => {
           <ReactPaginate
             pageCount={totalPages}
             marginPagesDisplayed={2}
-            pageRangeDisplayed={3}
+            pageRangeDisplayed={2}
             onPageChange={handlePageClick}
             containerClassName={"pagination justify-content-center"}
             activeClassName={"active"}
