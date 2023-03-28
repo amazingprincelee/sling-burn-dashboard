@@ -7,6 +7,7 @@ import TopBurners from "./pages/TopBurners";
 import BurnReward from "./pages/BurnReward";
 import BurnHistory from "./pages/BurnHistory";
 
+
 const App = () => {
   return (
     <div className="home-grid">

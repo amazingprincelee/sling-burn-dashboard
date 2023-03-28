@@ -30,14 +30,12 @@ const Dashboard = () => {
                 <h1 className="text-center">Latest History</h1>
                 <MobileTable data={tableData?.slice(0, 4)} showPagination={false} />
                 <Link to="../BurnHistory">
-                  <button className="btn btn-warning">View All</button>
+                  <button className="view-btn">View All</button>
                 </Link>
               </>
             ) : (
               <Tables tableTitle="Latest History">
-                <Link to="../BurnHistory">
-                  <button className="btn btn-warning view-btn">View All</button>
-                </Link>
+                
               </Tables>
             )}
           </div>

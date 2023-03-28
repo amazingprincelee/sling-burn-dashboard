@@ -49,6 +49,11 @@ main {
   width: 150px;
   
 }
+.sidebar-logo{
+  width: 50px;
+  height: 40px;
+  
+}
 .bars {
   display: flex;
   font-size: 25px;
@@ -74,6 +79,7 @@ main {
 .icon,
 .link_text {
   font-size: 18px;
+  
 }
 
 .icon {
@@ -172,14 +178,22 @@ main {
 }
 
 .view-btn {
-  margin-top: 50px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 5px;
+  background: #ffa500;
+  color: white;
+  border-color: white ;
+  
 }
 
-.view-all-btn:hover {
-  background: #fff;
+.view-btn:hover {
+  background-color: white;
   color: #000;
-  border: 2px solid orange;
+  border: 1px solid orange;
 }
+
+
 
 
 
@@ -187,7 +201,7 @@ main {
 
 .footer {
   
-  margin: auto;
+  
   width: 70vw;
   height: 200px;
   

@@ -33,7 +33,7 @@ const Sidebar = ({ children }) => {
     <div>
       <div style={{ width: isOpen ? "200px" : "50px" }} className="sidebar">
         <div className="top_section">
-          <img style={{ display: isOpen ? "block" : "none" }} className="logo" src={logo} alt="logo" />
+          <img style={{ display: isOpen ? "block" : "none" }} className="sidebar-logo" src={logo} alt="logo" />
           <div style={{ marginLeft: isOpen ? "100px" : "0px" }} className="bars">
             <FaBars onClick={toggle} />
           </div>
@@ -56,7 +56,7 @@ const Sidebar = ({ children }) => {
         </div>
         <div style={{ display: isOpen ? "block" : "none" }} className='token_price'>
           <p className='supply'>Circulating Supply</p>
-          <p className='link_text'>636,000,000</p>
+          <p  className='link_text'>636,000,000</p>
         </div>
       </div>
       <main>{children}</main>
